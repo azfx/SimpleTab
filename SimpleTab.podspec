@@ -10,19 +10,19 @@
 Pod::Spec.new do |s|
   s.name             = "SimpleTab"
   s.version          = "0.1.0"
-  s.summary          = "A short description of SimpleTab."
+  s.summary          = "A Simple iOS Tab Bar Controller with animation support."
   s.description      = <<-DESC
-                       An optional longer description of SimpleTab
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                        SimpleTab is a simple tab bar controller for iOS 8 and above, which extends the default UITabBarController class with customization support for :
+                        * Tab Item Custom UI
+                        * Tab Item Animations
+                        * View Transitions
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/SimpleTab"
+  s.homepage         = "https://github.com/azfx/SimpleTab"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "azfx" => "abdul.zalil@gmail.com" }
   s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SimpleTab.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  # s.social_media_url = 'https://twitter.com/shortislife'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
@@ -32,7 +32,4 @@ Pod::Spec.new do |s|
     'SimpleTab' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

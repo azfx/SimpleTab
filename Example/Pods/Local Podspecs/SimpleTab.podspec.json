@@ -1,0 +1,25 @@
+{
+  "name": "SimpleTab",
+  "version": "0.1.0",
+  "summary": "A short description of SimpleTab.",
+  "description": "An optional longer description of SimpleTab\n\n* Markdown format.\n* Don't worry about the indent, we strip it!",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/SimpleTab",
+  "license": "MIT",
+  "authors": {
+    "azfx": "abdul.zalil@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/SimpleTab.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "SimpleTab": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

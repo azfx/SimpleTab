@@ -1,0 +1,14 @@
+PODS:
+  - SimpleTab (0.1.0)
+
+DEPENDENCIES:
+  - SimpleTab (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleTab:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SimpleTab: e6728d9be4f7dd0a190ac221725725fbe61e22ba
+
+COCOAPODS: 0.38.0
