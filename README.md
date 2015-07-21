@@ -6,8 +6,9 @@
 [![Platform](https://img.shields.io/cocoapods/p/SimpleTab.svg?style=flat)](http://cocoapods.org/pods/SimpleTab)
 
 ## About
-
-![image](./Screenshots/simpletab1.gif) ![image](./Screenshots/simpletab2.gif)
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![image](./Screenshots/simpletab1.gif) | ![image](./Screenshots/simpletab2.gif)
 
 SimpleTab provides an easy alternative to the default UITabBarController with following support :
 
