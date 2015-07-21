@@ -18,7 +18,7 @@ SimpleTab provides an easy alternative to the default UITabBarController with fo
 
 SimpleTab is developed with following principles :
 
-* Simple - Ease to use and revert 
+* Simple - Easy to use and revert 
 * Keep the wheel - Utilize core features of UITabBarController
 * Flexible - Provide hooks to customize UI and Animations
 
@@ -40,7 +40,7 @@ SimpleTab is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "SimpleTab""
+pod "SimpleTab"
 ```
 
 ## Getting Started
@@ -57,13 +57,13 @@ pod "SimpleTab""
 * Tab Bar is set as `SimpleTabBar`
 * Tab Bar Item is set as `SimpleTabBarITem`
 
-Get Handle to Tab Bar Controller, preferably in AppDelegate
+##### 3.0 Get Handle to Tab Bar Controller, preferably in AppDelegate
 
 ```swift
 simpleTBC = self.window!.rootViewController as? SimpleTabBarController
 ```
 
-##### 3.0 Set View Transition  
+##### 4.0 Set View Transition  
 >Included Animations  
 >
 *  PopViewTransition  
@@ -73,7 +73,7 @@ simpleTBC = self.window!.rootViewController as? SimpleTabBarController
 simpleTBC?.viewTransition = PopViewTransition()
 ```        
 
-##### 4.0 Set Tab Bar Style
+##### 5.0 Set Tab Bar Style
 
 >Included Styles
 >
@@ -85,7 +85,7 @@ simpleTBC?.viewTransition = PopViewTransition()
 var style:SimpleTabBarStyle = PopTabBarStyle(tabBar: simpleTBC!.tabBar)
 ```
 
-##### 4.1 Optional - Set Tab Title attributes for selected and unselected (normal) states.  
+##### 5.1 Optional - Set Tab Title attributes for selected and unselected (normal) states.  
 Or use Tint Color in the Interface Builder to set the states
 
 ```swift
@@ -93,7 +93,7 @@ style.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGrayC
 style.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.blueColor()], forState: .Selected)
 ```
 
-##### 5.0 Set Tab Icon colors for selected and unselected (normal) states.  
+##### 6.0 Set Tab Icon colors for selected and unselected (normal) states.  
 Or use the App tint color to set the states
 
 ```swift
@@ -101,7 +101,7 @@ style.setIconColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
 style.setIconColor(UIColor.blueColor(), forState: UIControlState.Selected)
 ```
 
-##### 6.0 And finally, let Tab Bar Controller know of the style in use
+##### 7.0 And finally, let Tab Bar Controller know of the style in use
 
 ```swift
 simpleTBC?.tabBarStyle = style
