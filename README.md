@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/SimpleTab.svg?style=flat)](http://cocoapods.org/pods/SimpleTab)
 
 ## About
-Solarized dark             |  Solarized Ocean
+.                          |.
 :-------------------------:|:-------------------------:
 ![image](./Screenshots/simpletab1.gif) | ![image](./Screenshots/simpletab2.gif)
 
