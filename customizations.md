@@ -2,11 +2,8 @@
 ### Available Properties & Methods
 #### SimpleTabBarController
 
-```
-viewTransition:UIViewControllerAnimatedTransitioning
-```   
-
 Set View Transition
+* `viewTransition:UIViewControllerAnimatedTransitioning` - Set View Transition
 * `tabBarStyle:SimpleTabBarStyle` - Set Tab Bar Style
 * `setTitleTextAttributes(attributes:[NSObject:AnyObject] , forState: UIControlState)` - Set Tab Bar Item Title (UILabel) text attributes
   * Uses UILabel `attributedText` property behind the scenes 
