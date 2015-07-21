@@ -7,7 +7,7 @@
 
 ## About
 
-[image](./Screenshots/simpletab1.gif) [image](./Screenshots/simpletab2.gif)
+![image](./Screenshots/simpletab1.gif) ![image](./Screenshots/simpletab2.gif)
 
 SimpleTab provides an easy alternative to the default UITabBarController with following support :
 
