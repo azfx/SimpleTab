@@ -18,11 +18,9 @@ Pod::Spec.new do |s|
                         * View Transitions
                        DESC
   s.homepage         = "https://github.com/azfx/SimpleTab"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "azfx" => "abdul.zalil@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SimpleTab.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/shortislife'
+  s.source           = { :git => "https://github.com/azfx/SimpleTab.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
