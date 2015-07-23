@@ -53,7 +53,7 @@ public class SimpleTabBarItem: UITabBarItem  {
 
     //Tab icon view size
     public var iconSize:CGSize?
-
+    
     //Neat trick to set tabTitle if UITabBarItem.title is used
     override public var title:String? {
         get {
@@ -111,6 +111,7 @@ public class SimpleTabBarItem: UITabBarItem  {
         if let image = self.image {
             var newImage:UIImage = image.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             var imageView:UIImageView = UIImageView(image: newImage)
+            imageView.frame.size = iconSize!
             self.image = nil
             iconView.addSubview(imageView)
         }
