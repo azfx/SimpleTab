@@ -134,6 +134,8 @@ simpleTBC?.tabBarStyle = style
 
 #### SimpleTabBarStyle
 * `iconSize:CGSize` - Get or Set Tab Bar Item icon size
+* `iconTopOffset:CGFloat` - Get or Set Tab Bar Item icon top offset
+* `titleBottomOffset:CGFloat` - Get or Set Tab Bar Item Title UILabel's bottom offset
 * `titleHeight` - Get or Set Tab Bar Item Title UILabel's frame height
 * `barFrames:[CGRect]` - Get Tab Bar Item default frame values. Useful for animation
 

@@ -27,7 +27,7 @@ import UIKit
 
 public class SimpleTabBarItem: UITabBarItem  {
 
-    //Tab bar item frame - update child items when updated
+    ///Tab bar item frame - update child items when updated
     //TODO : Switch to AutoLayout
     public var frame:CGRect = CGRectZero {
         didSet {
@@ -36,31 +36,31 @@ public class SimpleTabBarItem: UITabBarItem  {
         }
     }
 
-    //Parent Tab Bar
+    ///Parent Tab Bar
     public var tabBar:SimpleTabBar?
 
-    //Index of the current tab bar item
+    ///Index of the current tab bar item
     public var index:Int?
 
-    //Main view to hold rest of UI objects
+    ///Main view to hold rest of UI objects
     public var barItemView:UIView?
 
-    //Tab Title
+    ///Tab Title
     public var tabTitle:String?
 
-    //Tab Title Label ( below icon ) height
+    ///Tab Title Label ( below icon ) height
     private var titleHeight:CGFloat?
 
-    //Tab icon view size
+    ///Tab icon view size
     private var iconSize:CGSize?
     
-    //Tab icon top offset
+    ///Tab icon top offset
     private var iconTopOffset:CGFloat?
     
-    //Tab title label bottom offset
+    ///Tab title label bottom offset
     private var titleBottoOffset:CGFloat?
     
-    //Neat trick to set tabTitle if UITabBarItem.title is used
+    ///Tab Bar Item Title
     override public var title:String? {
         get {
             return ""
@@ -70,12 +70,18 @@ public class SimpleTabBarItem: UITabBarItem  {
         }
     }
 
-    //UILabel to hold tab item title
+    ///UILabel to hold tab item title
     public var titleLabel:UILabel = UILabel()
 
-    //UIView to hold tab item icon and anything additional
+    ///UIView to hold tab item icon and anything additional
     public var iconView:UIView = UIView()
-
+    
+    /*
+        Initialize SimpleTabBarItem
+        :param: style   The SimpleTabBarStyle associated with this Tab Bar Item
+        :param: index   Index of this Tab Bar Item
+    
+    */
     public func initialize(style:SimpleTabBarStyle, index:Int) {
 
         //This function is called by the SimpleTabBarStyle object during init()
@@ -102,8 +108,10 @@ public class SimpleTabBarItem: UITabBarItem  {
         tabBar!.addSubview(barItemView!)
 
     }
-
-
+    
+    /*
+        Lay out Tab Bar Item.
+    */
     public func layoutBarItem() {
         //To set the tab bar item layout.
         //Called during initialize as well as any future layout changes

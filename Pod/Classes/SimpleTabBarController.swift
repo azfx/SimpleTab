@@ -29,7 +29,7 @@ public class SimpleTabBarController: UITabBarController {
 
     var _tabBar:SimpleTabBar?
 
-    //Neat trick to override default property with custom class
+    ///Tab Bar Component
     override public var tabBar:SimpleTabBar {
         get {
             return super.tabBar as! SimpleTabBar
@@ -39,10 +39,10 @@ public class SimpleTabBarController: UITabBarController {
         }
     }
 
-    //View Transitioning Object
+    ///View Transitioning Object
     public var viewTransition:UIViewControllerAnimatedTransitioning?
 
-    //Tab Bar Style ( with animation control for tab switching )
+    ///Tab Bar Style ( with animation control for tab switching )
     public var tabBarStyle:SimpleTabBarStyle? {
         didSet {
             self.tabBarStyle?.refresh()

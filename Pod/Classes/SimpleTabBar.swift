@@ -28,22 +28,22 @@ import UIKit
 
 public class SimpleTabBar: UITabBar , UITabBarControllerDelegate {
 
-    //View Controller Transitioning Object
+    ///View Controller Transitioning Object
     public var transitionObject:UIViewControllerAnimatedTransitioning?
 
-    //Keep track of tab bar items
+    ///Keep track of tab bar items
     public var barItems:[SimpleTabBarItem] = []
 
-    //Tab Bar Style ( with tab switching animations ) to be used
+    ///Tab Bar Style ( with tab switching animations ) to be used
     public var tabBarStyle:SimpleTabBarStyle?
 
-    //Handle to the parent tab bar controller
+    ///Handle to the parent tab bar controller
     public var tabBarCtrl:SimpleTabBarController?
 
-    //Index to tab bar item which just got unselected
+    ///Index to tab bar item which just got unselected
     public var deselectedIndex:Int?
 
-    //Selected Index - Trigger animate function in the associated style object whenever changed.
+    ///Selected Index - Trigger animate function in the associated style object whenever changed.
     public var selectedIndex:Int = 0 {
         didSet {
             self.deselectedIndex = oldValue

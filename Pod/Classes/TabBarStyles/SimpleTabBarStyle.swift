@@ -28,22 +28,22 @@ import Foundation
 
 public class SimpleTabBarStyle :NSObject {
     
-    //To hold CGRect Frames of all SimpleTabBarItems
+    ///To hold CGRect Frames of all SimpleTabBarItems
     public var barFrames:[CGRect] = []
     
-    //Handle to the tab bar
+    ///Handle to the tab bar
     public var tabBar:SimpleTabBar?
     
-    //Tab bar item iconview size
+    ///Tab bar item iconview size
     public var iconSize:CGSize = CGSize(width: 25 , height: 25 )
     
-    //Tab bar item icon top offset
+    ///Tab bar item icon top offset
     public var iconTopOffset:CGFloat = 3.0
     
-    //Tab bar item title bottom offset
+    ///Tab bar item title bottom offset
     public var titleBottomOffset:CGFloat = 5.0
     
-    //Tab bar item title label height
+    ///Tab bar item title label height
     public var titleHeight:CGFloat = 15
     
     //Tab bar item title label text attributes options
@@ -54,6 +54,10 @@ public class SimpleTabBarStyle :NSObject {
     //Can be set in AppDelegate / App Load
     internal private(set)  var iconColors:[UInt:UIColor] = [:]
     
+    /*
+        Init SimpleTabBarStyle with associated Tab Bar
+        :param: tabBar  SimpleTabBar where this style is being applied
+    */
     public init(tabBar:SimpleTabBar) {
         super.init()
         
