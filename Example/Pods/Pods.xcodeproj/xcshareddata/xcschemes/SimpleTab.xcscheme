@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A3E971FA47371E573D55AB2"
+               BlueprintIdentifier = "0E60C2695CB32872DE290CB2"
                BuildableName = "SimpleTab.framework"
                BlueprintName = "SimpleTab"
                ReferencedContainer = "container:Pods.xcodeproj">

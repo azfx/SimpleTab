@@ -1,5 +1,5 @@
 PODS:
-  - SimpleTab (0.1.0)
+  - SimpleTab (0.1.1)
 
 DEPENDENCIES:
   - SimpleTab (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SimpleTab: e6728d9be4f7dd0a190ac221725725fbe61e22ba
+  SimpleTab: 4e490e339a19d0d1d26c0fa3c862188eaad73ecb
 
 COCOAPODS: 0.38.0

@@ -28,21 +28,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7A8444DAD10A37F5708FAE8FF9C5F988 /* PBXContainerItemProxy */ = {
+		3488E0A12D5B027429DFDF13537EB4B4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F9F937BA17C3BE02F43C7904E4A3B305;
 			remoteInfo = SimpleTab;
 		};
-		91AF100DB06FDBFD924D4DC49ACCA041 /* PBXContainerItemProxy */ = {
+		B6BBA83128024AB22ED6FBF9391DF9F0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F9F937BA17C3BE02F43C7904E4A3B305;
 			remoteInfo = SimpleTab;
 		};
-		D6DAE2BE6F86422691B640291A9EFD60 /* PBXContainerItemProxy */ = {
+		EAB287C3CE8B59E6C9B8CFCAF074EE9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -326,7 +326,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				975B85478107526EDAD559F422412EFE /* PBXTargetDependency */,
+				0EF8D95363A57508679851347D32D77F /* PBXTargetDependency */,
 			);
 			name = "Pods-SimpleTab_Tests";
 			productName = "Pods-SimpleTab_Tests";
@@ -344,7 +344,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2A87B83C66ADCEABB939671A88C50632 /* PBXTargetDependency */,
+				A37B4D769EF8B6FBA000926BFA59CB47 /* PBXTargetDependency */,
 			);
 			name = "Pods-SimpleTab_Example";
 			productName = "Pods-SimpleTab_Example";
@@ -380,7 +380,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BB17A6EE65261F3989774F7E6BCDA837 /* PBXTargetDependency */,
+				CDAC2555C8CCE744E06246FFB26C68DC /* PBXTargetDependency */,
 			);
 			name = SimpleTab;
 			productName = SimpleTab;
@@ -477,23 +477,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2A87B83C66ADCEABB939671A88C50632 /* PBXTargetDependency */ = {
+		0EF8D95363A57508679851347D32D77F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SimpleTab;
 			target = F9F937BA17C3BE02F43C7904E4A3B305 /* SimpleTab */;
-			targetProxy = 7A8444DAD10A37F5708FAE8FF9C5F988 /* PBXContainerItemProxy */;
+			targetProxy = B6BBA83128024AB22ED6FBF9391DF9F0 /* PBXContainerItemProxy */;
 		};
-		975B85478107526EDAD559F422412EFE /* PBXTargetDependency */ = {
+		A37B4D769EF8B6FBA000926BFA59CB47 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SimpleTab;
 			target = F9F937BA17C3BE02F43C7904E4A3B305 /* SimpleTab */;
-			targetProxy = 91AF100DB06FDBFD924D4DC49ACCA041 /* PBXContainerItemProxy */;
+			targetProxy = 3488E0A12D5B027429DFDF13537EB4B4 /* PBXContainerItemProxy */;
 		};
-		BB17A6EE65261F3989774F7E6BCDA837 /* PBXTargetDependency */ = {
+		CDAC2555C8CCE744E06246FFB26C68DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SimpleTab-SimpleTab";
 			target = E69B017FE94634EBAB942ED321810DB3 /* SimpleTab-SimpleTab */;
-			targetProxy = D6DAE2BE6F86422691B640291A9EFD60 /* PBXContainerItemProxy */;
+			targetProxy = EAB287C3CE8B59E6C9B8CFCAF074EE9E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
