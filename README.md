@@ -89,8 +89,8 @@ var style:SimpleTabBarStyle = PopTabBarStyle(tabBar: simpleTBC!.tabBar)
 Or use Tint Color in the Interface Builder to set the states
 
 ```swift
-style.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState: .Normal)
-style.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.blueColor()], forState: .Selected)
+style.setTitleTextAttributes([NSFontAttributeName : UIFont.systemFontOfSize(14),  NSForegroundColorAttributeName: UIColor.lightGrayColor()], forState: .Normal)
+style.setTitleTextAttributes([NSFontAttributeName : UIFont.systemFontOfSize(14),NSForegroundColorAttributeName: colorWithHexString("4CB6BE")], forState: .Selected)
 ```
 
 ##### 5.0 Set Tab Icon colors for selected and unselected (normal) states.  

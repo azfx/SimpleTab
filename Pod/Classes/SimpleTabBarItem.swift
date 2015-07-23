@@ -49,10 +49,16 @@ public class SimpleTabBarItem: UITabBarItem  {
     public var tabTitle:String?
 
     //Tab Title Label ( below icon ) height
-    public var titleHeight:CGFloat?
+    private var titleHeight:CGFloat?
 
     //Tab icon view size
-    public var iconSize:CGSize?
+    private var iconSize:CGSize?
+    
+    //Tab icon top offset
+    private var iconTopOffset:CGFloat?
+    
+    //Tab title label bottom offset
+    private var titleBottoOffset:CGFloat?
     
     //Neat trick to set tabTitle if UITabBarItem.title is used
     override public var title:String? {
@@ -81,6 +87,9 @@ public class SimpleTabBarItem: UITabBarItem  {
 
         self.titleHeight = style.titleHeight
         self.iconSize = style.iconSize
+        
+        self.iconTopOffset = style.iconTopOffset
+        self.titleBottoOffset = style.titleBottomOffset
 
         titleLabel = UILabel()
         iconView = UIView()
@@ -100,11 +109,11 @@ public class SimpleTabBarItem: UITabBarItem  {
         //Called during initialize as well as any future layout changes
 
         //Set tab title label
-        titleLabel.frame = CGRect(x: 0 , y: frame.size.height - titleHeight! , width: frame.size.width , height:titleHeight!  )
+        titleLabel.frame = CGRect(x: 0 , y: frame.size.height - titleHeight! - titleBottoOffset! , width: frame.size.width , height:titleHeight!  )
         titleLabel.textAlignment = NSTextAlignment.Center
 
         //Set tab icon
-        iconView.frame = CGRect(x: 0 , y: 0 , width: iconSize!.width  , height:iconSize!.height  )
+        iconView.frame = CGRect(x: 0 , y: iconTopOffset! , width: iconSize!.width  , height:iconSize!.height  )
         iconView.center = CGPointMake(CGRectGetMidX(barItemView!.bounds), iconView.center.y)
 
         //Add default UITabBarItem image to this object

@@ -35,7 +35,13 @@ public class SimpleTabBarStyle :NSObject {
     public var tabBar:SimpleTabBar?
     
     //Tab bar item iconview size
-    public var iconSize:CGSize = CGSize(width: 30 , height: 30 )
+    public var iconSize:CGSize = CGSize(width: 25 , height: 25 )
+    
+    //Tab bar item icon top offset
+    public var iconTopOffset:CGFloat = 3.0
+    
+    //Tab bar item title bottom offset
+    public var titleBottomOffset:CGFloat = 5.0
     
     //Tab bar item title label height
     public var titleHeight:CGFloat = 15
