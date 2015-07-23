@@ -80,7 +80,7 @@ public class SimpleTabBarStyle :NSObject {
             for item in items {
                 var barItem:SimpleTabBarItem = item as! SimpleTabBarItem
                 if initialize {
-                    barItem.initialize(barFrames[i] , tabBar: tabBar , iconSize: iconSize  , titleHeight: self.titleHeight, index: i )
+                    barItem.initialize(self, index: i )
                 } else {
                     barItem.frame = barFrames[i]
                     barItem.layoutBarItem()

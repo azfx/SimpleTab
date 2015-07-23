@@ -70,17 +70,17 @@ public class SimpleTabBarItem: UITabBarItem  {
     //UIView to hold tab item icon and anything additional
     public var iconView:UIView = UIView()
 
-    public func initialize(frame:CGRect , tabBar:SimpleTabBar , iconSize:CGSize , titleHeight: CGFloat, index:Int) {
+    public func initialize(style:SimpleTabBarStyle, index:Int) {
 
         //This function is called by the SimpleTabBarStyle object during init()
         self.index = index
-        self.barItemView = UIView(frame: frame)
+        self.barItemView = UIView(frame: style.barFrames[index])
         self.barItemView?.userInteractionEnabled = false
-        self.frame = frame
-        self.tabBar = tabBar
+        self.frame = style.barFrames[index]
+        self.tabBar = style.tabBar
 
-        self.titleHeight = titleHeight
-        self.iconSize = iconSize
+        self.titleHeight = style.titleHeight
+        self.iconSize = style.iconSize
 
         titleLabel = UILabel()
         iconView = UIView()
@@ -90,7 +90,7 @@ public class SimpleTabBarItem: UITabBarItem  {
         barItemView!.addSubview(titleLabel)
         barItemView!.addSubview(iconView)
 
-        tabBar.addSubview(barItemView!)
+        tabBar!.addSubview(barItemView!)
 
     }
 
