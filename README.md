@@ -93,7 +93,7 @@ style.setTitleTextAttributes([NSFontAttributeName : UIFont.systemFontOfSize(14),
 style.setTitleTextAttributes([NSFontAttributeName : UIFont.systemFontOfSize(14),NSForegroundColorAttributeName: colorWithHexString("4CB6BE")], forState: .Selected)
 ```
 
-5.2 Set Tab Icon colors for selected and unselected (normal) states.  
+5.2 Optional - Set Tab Icon colors for selected and unselected (normal) states.  
 Or use the App tint color to set the states
 
 ```swift
