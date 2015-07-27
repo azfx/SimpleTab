@@ -40,7 +40,11 @@ public class SimpleTabBarController: UITabBarController {
     }
 
     ///View Transitioning Object
-    public var viewTransition:UIViewControllerAnimatedTransitioning?
+    public var viewTransition:UIViewControllerAnimatedTransitioning? {
+        didSet {
+            tabBar.transitionObject = self.viewTransition
+        }
+    }
 
     ///Tab Bar Style ( with animation control for tab switching )
     public var tabBarStyle:SimpleTabBarStyle? {
@@ -54,8 +58,8 @@ public class SimpleTabBarController: UITabBarController {
 
         //Initial setup
         tabBar.selectedIndex = self.selectedIndex
-        tabBar.transitionObject = self.viewTransition! ?? CrossFadeViewTransition()
-        tabBar.tabBarStyle = self.tabBarStyle! ?? ElegantTabBarStyle(tabBar: tabBar)
+        tabBar.transitionObject = self.viewTransition ?? CrossFadeViewTransition()
+        tabBar.tabBarStyle = self.tabBarStyle ?? ElegantTabBarStyle(tabBar: tabBar)
         tabBar.tabBarCtrl = self
         self.delegate = tabBar
 
