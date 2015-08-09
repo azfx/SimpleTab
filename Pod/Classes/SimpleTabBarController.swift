@@ -52,6 +52,19 @@ public class SimpleTabBarController: UITabBarController {
             self.tabBarStyle?.refresh()
         }
     }
+    
+    /**
+    Set or Get Selected Index
+    */
+    override public var selectedIndex:Int {
+        get {
+            return super.selectedIndex
+        }
+        set {
+            super.selectedIndex = newValue
+            self.tabBar.selectedIndex = newValue
+        }
+    }
 
     override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
