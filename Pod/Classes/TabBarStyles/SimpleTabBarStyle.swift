@@ -26,7 +26,7 @@
 import UIKit
 import Foundation
 
-public class SimpleTabBarStyle :NSObject {
+open class SimpleTabBarStyle :NSObject {
     
     ///To hold CGRect Frames of all SimpleTabBarItems
     public var barFrames:[CGRect] = []
@@ -61,14 +61,14 @@ public class SimpleTabBarStyle :NSObject {
     public init(tabBar:SimpleTabBar) {
         super.init()
         
-        iconColors[UIControlState.Normal.rawValue] = UIColor.grayColor()
-        iconColors[UIControlState.Selected.rawValue] = tabBar.tintColor
+        iconColors[UIControlState.normal.rawValue] = UIColor.gray
+        iconColors[UIControlState.selected.rawValue] = tabBar.tintColor
         
-        titleTextAttributes[UIControlState.Normal.rawValue] = [NSForegroundColorAttributeName: UIColor.grayColor()]
-        titleTextAttributes[UIControlState.Selected.rawValue] = [NSForegroundColorAttributeName: tabBar.tintColor]
+        titleTextAttributes[UIControlState.normal.rawValue] = [NSForegroundColorAttributeName as NSObject: UIColor.gray]
+        titleTextAttributes[UIControlState.selected.rawValue] = [NSForegroundColorAttributeName as NSObject: tabBar.tintColor]
         
         self.tabBar = tabBar
-        self.layoutTabBarItems(tabBar, initialize: true)
+        self.layoutTabBarItems(tabBar: tabBar, initialize: true)
         self.refreshColors()
     }
     
@@ -78,8 +78,8 @@ public class SimpleTabBarStyle :NSObject {
         var barItems:[SimpleTabBarItem] = []
         
         for view in tabBar.subviews as! [UIView] {
-            if view.userInteractionEnabled && view.isKindOfClass(UIControl) {
-                barFrames.append(view.frame)
+            if view.isUserInteractionEnabled && view.isKind(of:UIControl.self) {
+                self.barFrames.append(view.frame)
             }
         }
         barFrames.sort { (this, that) -> Bool in
@@ -97,22 +97,22 @@ public class SimpleTabBarStyle :NSObject {
                 }
                 
                 barItems.append(barItem)
-                i++
+                i += 1
             }
             tabBar.barItems = barItems
         }
     }
     
     public func refresh() {
-        layoutTabBarItems(self.tabBar!)
+        layoutTabBarItems(tabBar: self.tabBar!)
         refreshColors()
     }
     
     public func refreshColors() {
     
         tabBar!.barItems.map { barItem -> SimpleTabBarItem in
-            var state:UInt = barItem.index == self.tabBar!.selectedIndex ? UIControlState.Selected.rawValue : UIControlState.Normal.rawValue
-            if let attributes = self.titleTextAttributes[state] {
+            var state:UInt = barItem.index == self.tabBar!.selectedIndex ? UIControlState.selected.rawValue : UIControlState.normal.rawValue
+            if let attributes = self.titleTextAttributes[state] as! [String: AnyObject]? {
                 var attributedTitle:NSAttributedString = NSAttributedString(string: barItem.tabTitle!, attributes:attributes)
                 barItem.titleLabel.attributedText = attributedTitle
             }

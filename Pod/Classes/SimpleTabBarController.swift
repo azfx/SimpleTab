@@ -25,12 +25,12 @@
 
 import UIKit
 
-public class SimpleTabBarController: UITabBarController {
+open class SimpleTabBarController: UITabBarController {
 
     var _tabBar:SimpleTabBar?
 
     ///Tab Bar Component
-    override public var tabBar:SimpleTabBar {
+    override open var tabBar:SimpleTabBar {
         get {
             return super.tabBar as! SimpleTabBar
         }
@@ -40,14 +40,14 @@ public class SimpleTabBarController: UITabBarController {
     }
 
     ///View Transitioning Object
-    public var viewTransition:UIViewControllerAnimatedTransitioning? {
+    open var viewTransition:UIViewControllerAnimatedTransitioning? {
         didSet {
             tabBar.transitionObject = self.viewTransition
         }
     }
 
     ///Tab Bar Style ( with animation control for tab switching )
-    public var tabBarStyle:SimpleTabBarStyle? {
+    open var tabBarStyle:SimpleTabBarStyle? {
         didSet {
             self.tabBarStyle?.refresh()
         }
@@ -56,7 +56,7 @@ public class SimpleTabBarController: UITabBarController {
     /**
     Set or Get Selected Index
     */
-    override public var selectedIndex:Int {
+    override open var selectedIndex:Int {
         get {
             return super.selectedIndex
         }
@@ -66,7 +66,7 @@ public class SimpleTabBarController: UITabBarController {
         }
     }
 
-    override public func viewWillAppear(animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         //Initial setup
@@ -77,11 +77,11 @@ public class SimpleTabBarController: UITabBarController {
         self.delegate = tabBar
 
         //Let the style object know when things are loaded
-        self.tabBarStyle?.tabBarCtrlLoaded(self, tabBar: tabBar, selectedIndex: tabBar.selectedIndex)
+        self.tabBarStyle?.tabBarCtrlLoaded(tabBarCtrl: self, tabBar: tabBar, selectedIndex: tabBar.selectedIndex)
 
     }
 
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

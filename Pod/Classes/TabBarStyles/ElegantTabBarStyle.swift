@@ -25,20 +25,20 @@
 
 import UIKit
 
-public class ElegantTabBarStyle: SimpleTabBarStyle {
+open class ElegantTabBarStyle: SimpleTabBarStyle {
     
-    public var selectorView:UIView = UIView()
-    public var selectorHeight:CGFloat = 5
-    public var selectorSideInsets:CGFloat = 10
-    public var selectorColor:UIColor?
+    open var selectorView:UIView = UIView()
+    open var selectorHeight:CGFloat = 5
+    open var selectorSideInsets:CGFloat = 10
+    open var selectorColor:UIColor?
     
-    override public func tabBarCtrlLoaded(tabBarCtrl: SimpleTabBarController, tabBar: SimpleTabBar, selectedIndex: Int) {
+    override open func tabBarCtrlLoaded(tabBarCtrl: SimpleTabBarController, tabBar: SimpleTabBar, selectedIndex: Int) {
         
         //Setup a selection indicator view
-        var selectedItemFrame:CGRect = tabBar.barItems[selectedIndex].frame
-        var insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - selectorHeight, selectorSideInsets, 0, selectorSideInsets)
+        let selectedItemFrame:CGRect = tabBar.barItems[selectedIndex].frame
+        let insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - selectorHeight, selectorSideInsets, 0, selectorSideInsets)
         selectorView.frame = UIEdgeInsetsInsetRect(selectedItemFrame, insets)
-        self.selectorColor = self.iconColors[UIControlState.Selected.rawValue]
+        self.selectorColor = self.iconColors[UIControlState.selected.rawValue]
         self.selectorView.backgroundColor = self.selectorColor
         
         tabBar.addSubview(selectorView)
@@ -47,7 +47,7 @@ public class ElegantTabBarStyle: SimpleTabBarStyle {
     
     
     
-    override public func refresh() {
+    override open func refresh() {
         super.refresh()
         
         //Keep layout intact during orientation change etc
@@ -59,23 +59,23 @@ public class ElegantTabBarStyle: SimpleTabBarStyle {
         //Ensure selected bar/tab item state remains during refresh
         
         var tabBarItem:SimpleTabBarItem = tabBar!.barItems[tabBar!.selectedIndex]
-        tabBarItem.iconView.frame.offset(dx: 0, dy: 10)
+        tabBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
         tabBarItem.titleLabel.alpha = 0
         
     }
     
-    override public func animateTabTransition(tabBar: SimpleTabBar, toIndex: Int,fromIndex: Int) {
+    override open func animateTabTransition(tabBar: SimpleTabBar, toIndex: Int,fromIndex: Int) {
         
         var toBarItem:SimpleTabBarItem = tabBar.barItems[toIndex]
         var fromBarItem:SimpleTabBarItem = tabBar.barItems[fromIndex]
 
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
+        UIView.animate(withDuration: 0.5, animations: { () -> Void in
    
             //Refresh colors as per tab item state
             self.refreshColors()
             
             //Animate selected item to new state
-            toBarItem.iconView.frame.offset(dx: 0, dy: 10)
+            toBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
             toBarItem.titleLabel.alpha = 0
             
             //Animate unselected item to its original state

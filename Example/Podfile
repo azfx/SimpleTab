@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'SimpleTab_Example', :exclusive => true do
+target 'SimpleTab_Example' do
   pod "SimpleTab", :path => "../"
 end
 
-target 'SimpleTab_Tests', :exclusive => true do
+target 'SimpleTab_Tests' do
   pod "SimpleTab", :path => "../"
 
   

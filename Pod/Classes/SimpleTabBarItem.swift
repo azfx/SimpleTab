@@ -25,11 +25,11 @@
 
 import UIKit
 
-public class SimpleTabBarItem: UITabBarItem  {
+open class SimpleTabBarItem: UITabBarItem  {
 
     ///Tab bar item frame - update child items when updated
     //TODO : Switch to AutoLayout
-    public var frame:CGRect = CGRectZero {
+    open var frame:CGRect = CGRect.zero {
         didSet {
             self.barItemView!.frame = self.frame
             self.titleLabel.frame.size.width = self.frame.size.width
@@ -37,31 +37,31 @@ public class SimpleTabBarItem: UITabBarItem  {
     }
 
     ///Parent Tab Bar
-    public var tabBar:SimpleTabBar?
+    open var tabBar:SimpleTabBar?
 
     ///Index of the current tab bar item
-    public var index:Int?
+    open var index:Int?
 
     ///Main view to hold rest of UI objects
-    public var barItemView:UIView?
+    open var barItemView:UIView?
 
     ///Tab Title
-    public var tabTitle:String?
+    open var tabTitle:String?
 
     ///Tab Title Label ( below icon ) height
-    private var titleHeight:CGFloat?
+    fileprivate var titleHeight:CGFloat?
 
     ///Tab icon view size
-    private var iconSize:CGSize?
+    fileprivate var iconSize:CGSize?
     
     ///Tab icon top offset
-    private var iconTopOffset:CGFloat?
+    fileprivate var iconTopOffset:CGFloat?
     
     ///Tab title label bottom offset
-    private var titleBottoOffset:CGFloat?
+    fileprivate var titleBottoOffset:CGFloat?
     
     ///Tab Bar Item Title
-    override public var title:String? {
+    override open var title:String? {
         get {
             return ""
         }
@@ -71,10 +71,10 @@ public class SimpleTabBarItem: UITabBarItem  {
     }
 
     ///UILabel to hold tab item title
-    public var titleLabel:UILabel = UILabel()
+    open var titleLabel:UILabel = UILabel()
 
     ///UIView to hold tab item icon and anything additional
-    public var iconView:UIView = UIView()
+    open var iconView:UIView = UIView()
     
     /*
         Initialize SimpleTabBarItem
@@ -82,12 +82,12 @@ public class SimpleTabBarItem: UITabBarItem  {
         :param: index   Index of this Tab Bar Item
     
     */
-    public func initialize(style:SimpleTabBarStyle, index:Int) {
+    open func initialize(_ style:SimpleTabBarStyle, index:Int) {
 
         //This function is called by the SimpleTabBarStyle object during init()
         self.index = index
         self.barItemView = UIView(frame: style.barFrames[index])
-        self.barItemView?.userInteractionEnabled = false
+        self.barItemView?.isUserInteractionEnabled = false
         self.frame = style.barFrames[index]
         self.tabBar = style.tabBar
 
@@ -112,22 +112,22 @@ public class SimpleTabBarItem: UITabBarItem  {
     /*
         Lay out Tab Bar Item.
     */
-    public func layoutBarItem() {
+    open func layoutBarItem() {
         //To set the tab bar item layout.
         //Called during initialize as well as any future layout changes
 
         //Set tab title label
         titleLabel.frame = CGRect(x: 0 , y: frame.size.height - titleHeight! - titleBottoOffset! , width: frame.size.width , height:titleHeight!  )
-        titleLabel.textAlignment = NSTextAlignment.Center
+        titleLabel.textAlignment = NSTextAlignment.center
 
         //Set tab icon
         iconView.frame = CGRect(x: 0 , y: iconTopOffset! , width: iconSize!.width  , height:iconSize!.height  )
-        iconView.center = CGPointMake(CGRectGetMidX(barItemView!.bounds), iconView.center.y)
+        iconView.center = CGPoint(x: barItemView!.bounds.midX, y: iconView.center.y)
 
         //Add default UITabBarItem image to this object
         if let image = self.image {
-            var newImage:UIImage = image.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-            var imageView:UIImageView = UIImageView(image: newImage)
+            let newImage:UIImage = image.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+            let imageView:UIImageView = UIImageView(image: newImage)
             imageView.frame.size = iconSize!
             self.image = nil
             iconView.addSubview(imageView)

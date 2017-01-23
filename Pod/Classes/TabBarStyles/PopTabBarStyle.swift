@@ -25,22 +25,22 @@
 
 import UIKit
 
-public class PopTabBarStyle: SimpleTabBarStyle {
+open class PopTabBarStyle: SimpleTabBarStyle {
     
-    public var selectorView:UIView = UIView()
-    public var selectorHeight:CGFloat = 5
-    public var selectorSideInsets:CGFloat = 10
-    public var selectorColor:UIColor?
+    open var selectorView:UIView = UIView()
+    open var selectorHeight:CGFloat = 5
+    open var selectorSideInsets:CGFloat = 10
+    open var selectorColor:UIColor?
     
-    public var step:NSInteger = 0
+    open var step:NSInteger = 0
     
-    override public func tabBarCtrlLoaded(tabBarCtrl: SimpleTabBarController, tabBar: SimpleTabBar, selectedIndex: Int) {
+    override open func tabBarCtrlLoaded(tabBarCtrl: SimpleTabBarController, tabBar: SimpleTabBar, selectedIndex: Int) {
         
         //Setup a selection indicator view
-        var selectedItemFrame:CGRect = tabBar.barItems[selectedIndex].frame
-        var insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - selectorHeight, selectorSideInsets, 0, selectorSideInsets)
+        let selectedItemFrame:CGRect = tabBar.barItems[selectedIndex].frame
+        let insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - selectorHeight, selectorSideInsets, 0, selectorSideInsets)
         selectorView.frame = UIEdgeInsetsInsetRect(selectedItemFrame, insets)
-        self.selectorColor = self.iconColors[UIControlState.Selected.rawValue]
+        self.selectorColor = self.iconColors[UIControlState.selected.rawValue]
         self.selectorView.backgroundColor = self.selectorColor
         
         tabBar.addSubview(selectorView)
@@ -49,7 +49,7 @@ public class PopTabBarStyle: SimpleTabBarStyle {
     
     
     
-    override public func refresh() {
+    override open func refresh() {
         super.refresh()
         
         //Ensure selected bar/tab item state remains during refresh
@@ -59,29 +59,29 @@ public class PopTabBarStyle: SimpleTabBarStyle {
         selectorView.frame = UIEdgeInsetsInsetRect(selectedItemFrame, insets)
         
         var tabBarItem:SimpleTabBarItem = tabBar!.barItems[tabBar!.selectedIndex]
-        tabBarItem.iconView.frame.offset(dx: 0, dy: 10)
+        tabBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
         tabBarItem.titleLabel.alpha = 0
         
     }
     
-    override public func animateTabTransition(tabBar: SimpleTabBar, toIndex: Int,fromIndex: Int) {
+    override open func animateTabTransition(tabBar: SimpleTabBar, toIndex: Int,fromIndex: Int) {
         
         var toBarItem:SimpleTabBarItem = tabBar.barItems[toIndex]
         var fromBarItem:SimpleTabBarItem = tabBar.barItems[fromIndex]
         
         self.selectorView.frame.origin.x = toBarItem.frame.origin.x + self.selectorSideInsets
-        self.selectorView.frame.offset(dx: 0, dy: 10)
+        self.selectorView.frame.offsetBy(dx: 0, dy: 10)
         
         
-        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
             
             //Refresh colors as per tab item state
             self.refreshColors()
             
-            toBarItem.iconView.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            toBarItem.iconView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             
             //Animate selected item to new state
-            toBarItem.iconView.frame.offset(dx: 0, dy: 10)
+            toBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
             toBarItem.titleLabel.alpha = 0
             
             //Animate unselected item to its original state
@@ -95,8 +95,8 @@ public class PopTabBarStyle: SimpleTabBarStyle {
 
         }) { (finish) -> Void in
             //
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
-                toBarItem.iconView.transform = CGAffineTransformIdentity
+            UIView.animate(withDuration: 0.2, animations: { () -> Void in
+                toBarItem.iconView.transform = CGAffineTransform.identity
             })
         }
         

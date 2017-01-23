@@ -26,33 +26,33 @@
 import Foundation
 import UIKit
 
-public class PopViewTransition: NSObject, UIViewControllerAnimatedTransitioning {
+open class PopViewTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
-    var duration:NSTimeInterval = 0.33
+    var duration:TimeInterval = 0.33
     
-    public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
-        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
         
-        transitionContext.containerView().addSubview(toViewController.view)
+        transitionContext.containerView.addSubview(toViewController.view)
         toViewController.view.alpha = 0.0
         
 
-        UIView.animateWithDuration(0.35, animations: { () -> Void in
-            toViewController.view.transform = CGAffineTransformMakeScale(1.1, 1.1)
+        UIView.animate(withDuration: 0.35, animations: { () -> Void in
+            toViewController.view.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
             toViewController.view.alpha = 1.0
-        }) { (finished) -> Void in
+        }, completion: { (finished) -> Void in
         
-            UIView.animateWithDuration(0.2, animations: { () -> Void in
-                toViewController.view.transform = CGAffineTransformIdentity
+            UIView.animate(withDuration: 0.2, animations: { () -> Void in
+                toViewController.view.transform = CGAffineTransform.identity
             }, completion: { (finished) -> Void in
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             })
-        }
+        }) 
     }
     
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    open func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         
         return self.duration
     }

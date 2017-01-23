@@ -25,26 +25,26 @@
 
 import UIKit
 
-public class CrossFadeViewTransition: NSObject, UIViewControllerAnimatedTransitioning {
+open class CrossFadeViewTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
-    var duration:NSTimeInterval = 0.33
+    var duration:TimeInterval = 0.33
 
-    public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 
-        let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-        let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
 
-        transitionContext.containerView().addSubview(toViewController.view)
+        transitionContext.containerView.addSubview(toViewController.view)
         toViewController.view.alpha = 0.0
 
-        UIView.animateWithDuration(0.35, animations: {
+        UIView.animate(withDuration: 0.35, animations: {
             toViewController.view.alpha = 1.0
             }, completion: { (finished) in
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         })
     }
 
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    open func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
 
         return self.duration
     }
