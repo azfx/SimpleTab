@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SimpleTab"
-  s.version          = "0.1.1"
+  s.version          = "0.2.0"
   s.summary          = "A Simple iOS Tab Bar Controller with animation support."
   s.description      = <<-DESC
                         SimpleTab is a simple tab bar controller for iOS 8 and above, which extends the default UITabBarController class with customization support for :

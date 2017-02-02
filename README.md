@@ -43,6 +43,8 @@ it, simply add the following line to your Podfile:
 pod "SimpleTab"
 ```
 
+> Note: SimpleTab now supports Swift 3.X starting 0.2.0 version.
+
 ## Getting Started
 
 ##### 1.0 Import SimpleTab Framework to your Project
