@@ -209,7 +209,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -495,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E979D397251FA1BEB84C65C /* Pods-SimpleTab_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4C8XTRLLJ7;
 				INFOPLIST_FILE = SimpleTab/Info.plist;
@@ -510,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 83831B80139C5763D929F534 /* Pods-SimpleTab_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4C8XTRLLJ7;
 				INFOPLIST_FILE = SimpleTab/Info.plist;
@@ -525,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 623627489AEE70889E14229A /* Pods-SimpleTab_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -547,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 11177BCA5528D90E24261627 /* Pods-SimpleTab_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
