@@ -59,7 +59,7 @@ open class ElegantTabBarStyle: SimpleTabBarStyle {
         //Ensure selected bar/tab item state remains during refresh
         
         let tabBarItem:SimpleTabBarItem = tabBar!.barItems[tabBar!.selectedIndex]
-        tabBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
+        tabBarItem.iconView.frame = tabBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
         tabBarItem.titleLabel.alpha = 0
         
     }
@@ -75,7 +75,7 @@ open class ElegantTabBarStyle: SimpleTabBarStyle {
             self.refreshColors()
             
             //Animate selected item to new state
-            toBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
+            toBarItem.iconView.frame = toBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
             toBarItem.titleLabel.alpha = 0
             
             //Animate unselected item to its original state
