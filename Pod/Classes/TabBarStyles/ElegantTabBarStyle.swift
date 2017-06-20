@@ -51,23 +51,23 @@ open class ElegantTabBarStyle: SimpleTabBarStyle {
         super.refresh()
         
         //Keep layout intact during orientation change etc
-        var selectedItemFrame:CGRect = tabBar!.barItems[tabBar!.selectedIndex].frame
-        var insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - selectorHeight, selectorSideInsets, 0, selectorSideInsets)
+        let selectedItemFrame:CGRect = tabBar!.barItems[tabBar!.selectedIndex].frame
+        let insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - selectorHeight, selectorSideInsets, 0, selectorSideInsets)
         selectorView.frame = UIEdgeInsetsInsetRect(selectedItemFrame, insets)
         
         
         //Ensure selected bar/tab item state remains during refresh
         
-        var tabBarItem:SimpleTabBarItem = tabBar!.barItems[tabBar!.selectedIndex]
-        tabBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
+        let tabBarItem:SimpleTabBarItem = tabBar!.barItems[tabBar!.selectedIndex]
+        tabBarItem.iconView.frame = tabBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
         tabBarItem.titleLabel.alpha = 0
         
     }
     
     override open func animateTabTransition(tabBar: SimpleTabBar, toIndex: Int,fromIndex: Int) {
         
-        var toBarItem:SimpleTabBarItem = tabBar.barItems[toIndex]
-        var fromBarItem:SimpleTabBarItem = tabBar.barItems[fromIndex]
+        let toBarItem:SimpleTabBarItem = tabBar.barItems[toIndex]
+        let fromBarItem:SimpleTabBarItem = tabBar.barItems[fromIndex]
 
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
    
@@ -75,7 +75,7 @@ open class ElegantTabBarStyle: SimpleTabBarStyle {
             self.refreshColors()
             
             //Animate selected item to new state
-            toBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
+            toBarItem.iconView.frame = toBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
             toBarItem.titleLabel.alpha = 0
             
             //Animate unselected item to its original state

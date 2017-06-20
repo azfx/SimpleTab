@@ -31,7 +31,7 @@ open class CrossFadeViewTransition: NSObject, UIViewControllerAnimatedTransition
 
     open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 
-        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+        _ = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
         let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
 
         transitionContext.containerView.addSubview(toViewController.view)

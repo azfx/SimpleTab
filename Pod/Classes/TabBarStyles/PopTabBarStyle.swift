@@ -54,23 +54,23 @@ open class PopTabBarStyle: SimpleTabBarStyle {
         
         //Ensure selected bar/tab item state remains during refresh
         
-        var selectedItemFrame:CGRect = tabBar!.barItems[tabBar!.selectedIndex].frame
-        var insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - selectorHeight, selectorSideInsets, 0, selectorSideInsets)
+        let selectedItemFrame:CGRect = tabBar!.barItems[tabBar!.selectedIndex].frame
+        let insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - selectorHeight, selectorSideInsets, 0, selectorSideInsets)
         selectorView.frame = UIEdgeInsetsInsetRect(selectedItemFrame, insets)
         
-        var tabBarItem:SimpleTabBarItem = tabBar!.barItems[tabBar!.selectedIndex]
-        tabBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
+        let tabBarItem:SimpleTabBarItem = tabBar!.barItems[tabBar!.selectedIndex]
+        tabBarItem.iconView.frame = tabBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
         tabBarItem.titleLabel.alpha = 0
         
     }
     
     override open func animateTabTransition(tabBar: SimpleTabBar, toIndex: Int,fromIndex: Int) {
         
-        var toBarItem:SimpleTabBarItem = tabBar.barItems[toIndex]
-        var fromBarItem:SimpleTabBarItem = tabBar.barItems[fromIndex]
+        let toBarItem:SimpleTabBarItem = tabBar.barItems[toIndex]
+        let fromBarItem:SimpleTabBarItem = tabBar.barItems[fromIndex]
         
         self.selectorView.frame.origin.x = toBarItem.frame.origin.x + self.selectorSideInsets
-        self.selectorView.frame.offsetBy(dx: 0, dy: 10)
+        self.selectorView.frame = self.selectorView.frame.offsetBy(dx: 0, dy: 10)
         
         
         UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions(), animations: { () -> Void in
@@ -81,7 +81,7 @@ open class PopTabBarStyle: SimpleTabBarStyle {
             toBarItem.iconView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             
             //Animate selected item to new state
-            toBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
+            toBarItem.iconView.frame = toBarItem.iconView.frame.offsetBy(dx: 0, dy: 10)
             toBarItem.titleLabel.alpha = 0
             
             //Animate unselected item to its original state
@@ -89,8 +89,8 @@ open class PopTabBarStyle: SimpleTabBarStyle {
             fromBarItem.layoutBarItem()
             
             //Animate selector view under the selected tab item
-            var selectedItemFrame:CGRect = toBarItem.frame
-            var insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - self.selectorHeight, self.selectorSideInsets, 0, self.selectorSideInsets)
+            let selectedItemFrame:CGRect = toBarItem.frame
+            let insets:UIEdgeInsets = UIEdgeInsetsMake(selectedItemFrame.height - self.selectorHeight, self.selectorSideInsets, 0, self.selectorSideInsets)
             self.selectorView.frame = UIEdgeInsetsInsetRect(selectedItemFrame, insets)
 
         }) { (finish) -> Void in
