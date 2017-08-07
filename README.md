@@ -22,6 +22,7 @@ SimpleTab is developed with following principles :
 * Keep the wheel - Utilize core features of UITabBarController
 * Flexible - Provide hooks to customize UI and Animations
 
+### Note: At the moment, SimpleTab does not work when instantiated programmatically. It must be used along with UITabBarController set in Interface Builder.
 
 ## Demo
 
@@ -53,7 +54,7 @@ pod "SimpleTab"
 #import SimpleTab
 ```
 
-2.0 If using Interface Builder, ensure :
+2.0 Using Interface Builder, ensure :
 
 * Tab Bar Controller is set as `SimpleTabBarController`
 * Tab Bar is set as `SimpleTabBar`
